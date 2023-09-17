@@ -20,6 +20,7 @@
 		5B58F8EF2AB706EC00265BF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B58F8F22AB706EC00265BF7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B58F8F42AB706EC00265BF7 /* QR_Generator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QR_Generator.entitlements; sourceTree = "<group>"; };
+		5B58F8FC2AB70D6F00265BF7 /* QR-Generator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "QR-Generator-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +53,7 @@
 		5B58F8EA2AB706EB00265BF7 /* QR Generator */ = {
 			isa = PBXGroup;
 			children = (
+				5B58F8FC2AB70D6F00265BF7 /* QR-Generator-Info.plist */,
 				5B58F8EB2AB706EB00265BF7 /* QR_GeneratorApp.swift */,
 				5B58F8ED2AB706EB00265BF7 /* ContentView.swift */,
 				5B58F8EF2AB706EC00265BF7 /* Assets.xcassets */,
@@ -274,6 +276,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "QR-Generator-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,6 +304,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "QR-Generator-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
