@@ -12,9 +12,9 @@ struct QR_GeneratorApp: App {
     var body: some Scene {
         MenuBarExtra {
             ContentView()
-                .frame(minWidth: 300, minHeight: 300)
         } label: {
             Image(systemName: "qrcode")
         }
+        .menuBarExtraStyle(.window)
     }
 }
