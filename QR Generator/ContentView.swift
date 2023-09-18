@@ -19,7 +19,7 @@ struct ContentView: View {
     
     @AppStorage("fgColorHue") private var fgColorHue = 0.0
     @AppStorage("fgColorBrightness") private var fgColorBrightness = 0.0
-    @AppStorage("fgColorOpacity") private var fgColorOpacity = 0.0
+    @AppStorage("fgColorOpacity") private var fgColorOpacity = 1.0
     @AppStorage("isFgWhite") private var isFgWhite = false
     
     @AppStorage("qrText") private var qrText: String = ""
