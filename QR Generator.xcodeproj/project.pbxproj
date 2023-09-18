@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B18DE442AB8B1E90094FF9E /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B18DE432AB8B1E90094FF9E /* ColorPickerView.swift */; };
 		5B58F8EC2AB706EB00265BF7 /* QR_GeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58F8EB2AB706EB00265BF7 /* QR_GeneratorApp.swift */; };
 		5B58F8EE2AB706EB00265BF7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B58F8ED2AB706EB00265BF7 /* ContentView.swift */; };
 		5B58F8F02AB706EC00265BF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B58F8EF2AB706EC00265BF7 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B18DE432AB8B1E90094FF9E /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		5B58F8E82AB706EB00265BF7 /* QR Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B58F8EB2AB706EB00265BF7 /* QR_GeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR_GeneratorApp.swift; sourceTree = "<group>"; };
 		5B58F8ED2AB706EB00265BF7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				5B58F8FC2AB70D6F00265BF7 /* QR-Generator-Info.plist */,
 				5B58F8EB2AB706EB00265BF7 /* QR_GeneratorApp.swift */,
 				5B58F8ED2AB706EB00265BF7 /* ContentView.swift */,
+				5B18DE432AB8B1E90094FF9E /* ColorPickerView.swift */,
 				5B58F8EF2AB706EC00265BF7 /* Assets.xcassets */,
 				5B58F8F42AB706EC00265BF7 /* QR_Generator.entitlements */,
 				5B58F8F12AB706EC00265BF7 /* Preview Content */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B18DE442AB8B1E90094FF9E /* ColorPickerView.swift in Sources */,
 				5B58F8EE2AB706EB00265BF7 /* ContentView.swift in Sources */,
 				5B58F8EC2AB706EB00265BF7 /* QR_GeneratorApp.swift in Sources */,
 			);

@@ -10,6 +10,18 @@ import EFQRCode
 
 struct ContentView: View {
     @State private var cgImage: CGImage?
+    @State private var isChangingBackgroundColor = true
+    
+    @AppStorage("bgColorHue") private var bgColorHue = 0.0
+    @AppStorage("bgColorBrightness") private var bgColorBrightness = 0.0
+    @AppStorage("bgColorOpacity") private var bgColorOpacity = 0.0
+    @AppStorage("isBgWhite") private var isBgWhite = true
+    
+    @AppStorage("fgColorHue") private var fgColorHue = 0.0
+    @AppStorage("fgColorBrightness") private var fgColorBrightness = 0.0
+    @AppStorage("fgColorOpacity") private var fgColorOpacity = 0.0
+    @AppStorage("isFgWhite") private var isFgWhite = false
+    
     @AppStorage("qrText") private var qrText: String = ""
     
     var hasImage: Bool {
@@ -21,13 +33,16 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            TextField("Enter text (Press enter to generate)", text: $qrText)
-                .padding([.horizontal, .top])
             if hasImage {
                 Image(nsImage: NSImage(cgImage: cgImage!, size: NSSize(width: 270, height: 270)))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .clipShape(RoundedRectangle(cornerRadius: 3))
                     .padding()
             }
+            
+            TextField("Enter text (Press return to generate)", text: $qrText)
+                .textFieldStyle(.roundedBorder)
+                .frame(width: 272)
+                .padding(.bottom, 1)
             
             HStack {
                 Text("Download as image")
@@ -38,8 +53,36 @@ struct ContentView: View {
                     Text("Download")
                 }
                 .buttonStyle(.borderedProminent)
+                .help("Save QR code to device")
             }
             .padding(.horizontal)
+            .padding(.top)
+            
+            Divider()
+                .padding(.horizontal)
+            
+            VStack {
+                Picker("Which color do you want to switch?", selection: $isChangingBackgroundColor) {
+                    Text("Background Color").tag(true)
+                    Text("Foreground Color").tag(false)
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+                .padding(.horizontal)
+                
+                ColorPickerView(
+                    title: isChangingBackgroundColor ? "Background Color" : "Foreground Color",
+                    colorHue: isChangingBackgroundColor ? $bgColorHue : $fgColorHue,
+                    colorBrightness: isChangingBackgroundColor ? $bgColorBrightness : $fgColorBrightness,
+                    colorOpacity: isChangingBackgroundColor ? $bgColorOpacity : $fgColorOpacity,
+                    isWhite: isChangingBackgroundColor ? $isBgWhite : $isFgWhite
+                ) {
+                    generateQRCode()
+                }
+            }
+            
+            Divider()
+                .padding(.horizontal)
             
             HStack {
                 HStack {
@@ -65,9 +108,9 @@ struct ContentView: View {
     
     func generateQRCode() {
         if let image = EFQRCode.generate(
-            for: qrText
-            //            backgroundColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0),
-            //            foregroundColor: CGColor(red: 1, green: 1, blue: 1, alpha: 1)
+            for: qrText,
+            backgroundColor: isBgWhite ? Color.white.cgColor! : Color(hue: bgColorHue, saturation: 1, brightness: bgColorBrightness, opacity: bgColorOpacity).cgColor!,
+            foregroundColor: isFgWhite ? Color.white.cgColor! : Color(hue: fgColorHue, saturation: 1, brightness: fgColorBrightness, opacity: fgColorOpacity).cgColor!
         ) {
             cgImage = image
         } else {
