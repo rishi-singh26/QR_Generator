@@ -18,12 +18,20 @@ struct ColorPickerView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            HStack {
+                Spacer()
+                Toggle("White", isOn: $isWhite)
+                    .onChange(of: isWhite) { _ in
+                        onColorChange()
+                    }
+            }
             Text("Color")
             HStack {
                 Slider(value: $colorHue)
-                    .onChange(of: colorHue) { newValue in
+                    .onChange(of: colorHue) { _ in
                         onColorChange()
                     }
+                    .disabled(isWhite)
                 RoundedRectangle(cornerRadius: 2)
                     .fill(Color(hue: colorHue, saturation: 1, brightness: 1))
                     .frame(width: 30, height: 20)
@@ -31,9 +39,10 @@ struct ColorPickerView: View {
             Text("Brightness")
             HStack {
                 Slider(value: $colorBrightness)
-                    .onChange(of: colorBrightness) { newValue in
+                    .onChange(of: colorBrightness) { _ in
                         onColorChange()
                     }
+                    .disabled(isWhite)
                 RoundedRectangle(cornerRadius: 2)
                     .fill(Color(hue: colorHue, saturation: 1, brightness: colorBrightness))
                     .frame(width: 30, height: 20)
@@ -41,17 +50,14 @@ struct ColorPickerView: View {
             Text("Opacity")
             HStack {
                 Slider(value: $colorOpacity)
-                    .onChange(of: colorOpacity) { newValue in
+                    .onChange(of: colorOpacity) { _ in
                         onColorChange()
                     }
+                    .disabled(isWhite)
                 RoundedRectangle(cornerRadius: 2)
                     .fill(Color(hue: colorHue, saturation: colorOpacity, brightness: colorBrightness))
                     .frame(width: 30, height: 20)
             }
-            Toggle("White", isOn: $isWhite)
-                .onChange(of: isWhite) { newValue in
-                    onColorChange()
-                }
         }
         .padding(.horizontal)
         .padding(.horizontal, 3)

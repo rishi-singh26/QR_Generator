@@ -13,6 +13,8 @@
 		5B58F8F02AB706EC00265BF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B58F8EF2AB706EC00265BF7 /* Assets.xcassets */; };
 		5B58F8F32AB706EC00265BF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B58F8F22AB706EC00265BF7 /* Preview Assets.xcassets */; };
 		5B58F8FF2AB70E0B00265BF7 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 5B58F8FE2AB70E0B00265BF7 /* EFQRCode */; };
+		5B6414352AB9EF34003DFA7F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6414342AB9EF34003DFA7F /* ColorExtension.swift */; };
+		5B6414392AB9F4ED003DFA7F /* HexColorInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6414382AB9F4ED003DFA7F /* HexColorInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		5B58F8F22AB706EC00265BF7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B58F8F42AB706EC00265BF7 /* QR_Generator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QR_Generator.entitlements; sourceTree = "<group>"; };
 		5B58F8FC2AB70D6F00265BF7 /* QR-Generator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "QR-Generator-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5B6414342AB9EF34003DFA7F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		5B6414382AB9F4ED003DFA7F /* HexColorInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColorInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,9 @@
 				5B58F8FC2AB70D6F00265BF7 /* QR-Generator-Info.plist */,
 				5B58F8EB2AB706EB00265BF7 /* QR_GeneratorApp.swift */,
 				5B58F8ED2AB706EB00265BF7 /* ContentView.swift */,
+				5B6414342AB9EF34003DFA7F /* ColorExtension.swift */,
 				5B18DE432AB8B1E90094FF9E /* ColorPickerView.swift */,
+				5B6414382AB9F4ED003DFA7F /* HexColorInputView.swift */,
 				5B58F8EF2AB706EC00265BF7 /* Assets.xcassets */,
 				5B58F8F42AB706EC00265BF7 /* QR_Generator.entitlements */,
 				5B58F8F12AB706EC00265BF7 /* Preview Content */,
@@ -154,7 +160,9 @@
 			files = (
 				5B18DE442AB8B1E90094FF9E /* ColorPickerView.swift in Sources */,
 				5B58F8EE2AB706EB00265BF7 /* ContentView.swift in Sources */,
+				5B6414392AB9F4ED003DFA7F /* HexColorInputView.swift in Sources */,
 				5B58F8EC2AB706EB00265BF7 /* QR_GeneratorApp.swift in Sources */,
+				5B6414352AB9EF34003DFA7F /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
